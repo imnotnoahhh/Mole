@@ -18,7 +18,7 @@ import (
 )
 
 var (
-	jsonOutput = flag.Bool("json", false, "output analysis as JSON instead of TUI")
+	jsonMode = flag.Bool("json", false, "output analysis as JSON instead of TUI")
 )
 
 type dirEntry struct {
@@ -155,7 +155,7 @@ func main() {
 		isOverview = false
 	}
 
-	if *jsonOutput {
+	if *jsonMode {
 		runJSONMode(abs, isOverview)
 	} else {
 		runTUIMode(abs, isOverview)
